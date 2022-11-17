@@ -1,0 +1,33 @@
+{
+  "name": "dev-team-profile-generator",
+  "version": "1.0.0",
+  "description": "A Node.js command-line and web application thath takes in information about team members on a software engineering team, then generates an HTML webpage that displays summaries for each person. Uses the Inquirer and Jest packages.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index",
+    "watch": "nodemon index",
+    "test": "jest"
+  },
+  "keywords": [
+    "Node.js",
+    "Fundation",
+    "JavaScript",
+    "Inquirer",
+    "Jest"
+  ],
+  "author": "Daniel Flores",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielfloresd/dev-team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/danielfloresd/dev-team-profile-generator#readme",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
