@@ -1,4 +1,8 @@
 // stores IDs, used in ID validation to ensure no duplicates
+const Logger = require("../logger");
+
+const log = new Logger();
+
 let takenIDs = [];
 
 const introQuestion = [
@@ -10,7 +14,7 @@ const introQuestion = [
         default: "index.html",
         validate: input => {
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a file name.\x1b[0m');
+                log.yellow('No Input detected. Please enter a file name.');
                 return false;
             } else {
                 return true;
@@ -28,7 +32,7 @@ const managerQuestions = [
         message: "What is the team manager's name?",
         validate: input => {
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a name.\x1b[0m');
+                log.yellow('No Input detected. Please enter a name.');
                 return false;
             } else {
                 return true;
@@ -52,16 +56,16 @@ const managerQuestions = [
             })
 
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a number.\x1b[0m');
+                log.yellow('No Input detected. Please enter a number.');
                 return false;
             } else if (isNaN(input)) {
-                console.log('\x1b[31m\tPlease enter a number.\x1b[0m');
+                log.yellow('\tPlease enter a number.');
                 return false;
             } else if (input < 0) {
-                console.log('\x1b[31m\tPlease enter a non-negative number.\x1b[0m');
+                log.yellow('\tPlease enter a non-negative number.');
                 return false;
             } else if (dupeID) {
-                console.log('\x1b[31m\tAnother team member already has that ID. Please enter a different ID.\x1b[0m');
+                log.yellow('\tAnother team member already has that ID. Please enter a different ID.');
                 return false;
             }else {
                 takenIDs.push(input);
@@ -83,7 +87,7 @@ const managerQuestions = [
             );
 
             if (!validEmail) {
-                console.log('\x1b[31m\tPlease enter a valid email address in the proper format.\x1b[0m');
+                log.yellow('\tPlease enter a valid email address in the proper format.');
                 return false;
             } else {
                 return true;
@@ -97,13 +101,13 @@ const managerQuestions = [
         message: "What is the team manager's office number?",
         validate: input => {
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a number.\x1b[0m');
+                log.yellow('No Input detected. Please enter a number.');
                 return false;
             } else if (isNaN(input)) {
-                console.log('\x1b[31m\tPlease enter a number.\x1b[0m');
+                log.yellow('\tPlease enter a number.');
                 return false;
             } else if (input < 0) {
-                console.log('\x1b[31m\tPlease enter a non-negative number.\x1b[0m');
+                log.yellow('\tPlease enter a non-negative number.');
                 return false;
             } else {
                 return true;
@@ -121,7 +125,7 @@ const engineerQuestions = [
         message: "What is the engineer's name?",
         validate: input => {
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a name.\x1b[0m');
+                log.yellow('No Input detected. Please enter a name.');
                 return false;
             } else {
                 return true;
@@ -145,16 +149,16 @@ const engineerQuestions = [
             })
 
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a number.\x1b[0m');
+                log.yellow('No Input detected. Please enter a number.');
                 return false;
             } else if (isNaN(input)) {
-                console.log('\x1b[31m\tPlease enter a number.\x1b[0m');
+                log.yellow('\tPlease enter a number.');
                 return false;
             } else if (input < 0) {
-                console.log('\x1b[31m\tPlease enter a non-negative number.\x1b[0m');
+                log.yellow('\tPlease enter a non-negative number.');
                 return false;
             } else if (dupeID) {
-                console.log('\x1b[31m\tAnother team member already has that ID. Please enter a different ID.\x1b[0m');
+                log.yellow('\tAnother team member already has that ID. Please enter a different ID.');
                 return false;
             }else {
                 takenIDs.push(input);
@@ -176,7 +180,7 @@ const engineerQuestions = [
             );
 
             if (!validEmail) {
-                console.log('\x1b[31m\tPlease enter a valid email address in the proper format.\x1b[0m');
+                log.yellow('\tPlease enter a valid email address in the proper format.');
                 return false;
             } else {
                 return true;
@@ -190,7 +194,7 @@ const engineerQuestions = [
         message: "What is the engineer's github username?",
         validate: input => {
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a username.\x1b[0m');
+                log.yellow('No Input detected. Please enter a username.');
                 return false;
             } else {
                 return true;
@@ -208,7 +212,7 @@ const internQuestions = [
         message: "What is the intern's name?",
         validate: input => {
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a name.\x1b[0m');
+                log.yellow('No Input detected. Please enter a name.');
                 return false;
             } else {
                 return true;
@@ -232,16 +236,16 @@ const internQuestions = [
             })
 
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a number.\x1b[0m');
+                log.yellow('No Input detected. Please enter a number.');
                 return false;
             } else if (isNaN(input)) {
-                console.log('\x1b[31m\tPlease enter a number.\x1b[0m');
+                log.yellow('\tPlease enter a number.');
                 return false;
             } else if (input < 0) {
-                console.log('\x1b[31m\tPlease enter a non-negative number.\x1b[0m');
+                log.yellow('\tPlease enter a non-negative number.');
                 return false;
             } else if (dupeID) {
-                console.log('\x1b[31m\tAnother team member already has that ID. Please enter a different ID.\x1b[0m');
+                log.yellow('\tAnother team member already has that ID. Please enter a different ID.');
                 return false;
             }else {
                 takenIDs.push(input);
@@ -263,7 +267,7 @@ const internQuestions = [
             );
 
             if (!validEmail) {
-                console.log('\x1b[31m\tPlease enter a valid email address in the proper format.\x1b[0m');
+                log.yellow('\tPlease enter a valid email address in the proper format.');
                 return false;
             } else {
                 return true;
@@ -277,7 +281,7 @@ const internQuestions = [
         message: "What is the intern's school?",
         validate: input => {
             if (!input) {
-                console.log('\x1b[31mNo Input detected. Please enter a school.\x1b[0m');
+                log.yellow('No Input detected. Please enter a school.');
                 return false;
             } else {
                 return true;
