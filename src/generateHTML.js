@@ -109,6 +109,52 @@ const generateHTML = (teamArray) => {
     <link rel="stylesheet" href="./style.css">
     <title>Team Profile</title>
 </head>
+<style>
+body {
+    background-color:white;
+}
+
+.header {
+    color: white;
+    background-color: #ea2452;
+    box-shadow: 1px 3px 19px 0px rgba(0,0,0,0.26);    
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #48a0bb;
+    border-radius: 5px;
+    box-shadow: 1px 2px 16px 2px rgba(0,0,0,0.46);
+}
+
+.card-divider {
+    background-color: #1059cf;
+    color: white;
+    padding: 5px;
+}
+
+.card-section {
+    padding-block: 30px;
+}
+
+p {
+    margin-block: 2px;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    padding-bottom: 5px;
+}
+
+h1, h2, h3, h4, p {
+    font-family: 'Raleway', 'Noto Sans', Arial, sans-serif !important;
+}
+</style>
 
 <body>
    
