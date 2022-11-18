@@ -1,21 +1,31 @@
+/**
+ * generateHTML.js
+ *
+ *
+ * @license The Unlicense, http://unlicense.org/
+ * @version 1.0
+ * @author  Daniel Flores, https://github.com/danielfloresd/
+ * @updated 2022-11-16
+ * @link    url goes here
+ *
+ *
+ */
 const managerCard = ({ name, id, email, officeNumber }) => {
-
     return `
         <div class="cell flex-container">
             <div class="card">
                 <div class="card-divider align-center grid-y">
                     <h2>${name}</h2>
-                    <h4><i class="fa-solid fa-people-roof"></i> Manager</h4>
+                    <h3><i class="fa-solid fa-people-roof"></i> Manager</h3>
                     </div>
                 <div class="card-section text-left">
-                    <p>ID number: <b>${id}</b></p>
-                    <p>E-mail: <a href="mailto: ${email}"><b>${email}</b></a></p>
+                    <p>ID: <b>${id}</b></p>
+                    <p>email: <a href="mailto: ${email}"><b>${email}</b></a></p>
                     <p>Office Number: <b>${officeNumber}</b></p>
                 </div>
             </div>
         </div>
     `;
-
 };
 
 const engineerCard = ({ name, id, email, github }) => {
@@ -25,11 +35,11 @@ const engineerCard = ({ name, id, email, github }) => {
             <div class="card">
                 <div class="card-divider align-center grid-y">
                     <h2>${name}</h2>
-                    <h4><i class="fa-solid fa-laptop-code"></i> Engineer</h4>
+                    <h3><i class="fa-solid fa-laptop-code"></i> Engineer</h3>
                     </div>
                 <div class="card-section text-left">
-                    <p>ID number: <b>${id}</b></p>
-                    <p>E-mail: <a href="mailto: ${email}"><b>${email}</b></a></p>
+                    <p>ID: <b>${id}</b></p>
+                    <p>email: <a href="mailto: ${email}"><b>${email}</b></a></p>
                     <p>GitHub: <a href="https://github.com/${github}" target="_blank"><b>${github}</b></a></p>
                 </div>
             </div>
@@ -39,18 +49,17 @@ const engineerCard = ({ name, id, email, github }) => {
 };
 
 const internCard = ({ name, id, email, school }) => {
-
     return `
         <div class="cell flex-container">
             <div class="card">
                 <div class="card-divider align-center grid-y">
                     <h2>${name}</h2>
-                    <h4><i class="fa-solid fa-user-graduate"></i> Intern</h4>
+                    <h3><i class="fa-solid fa-user-graduate"></i> Intern</h3>
                     </div>
                 <div class="card-section text-left">
-                    <p>ID number: <b>${id}</b></p>
-                    <p>E-mail: <a href="mailto: ${email}"><b>${email}</b></a></p>
-                    <p>School: <b>${school}</b></p>
+                    <p>ID: <b>${id}</b></p>
+                    <p>email: <a href="mailto: ${email}"><b>${email}</b></a></p>
+                    <p>School: <a href="https://${school}.edu"><b>${school}</b></a></p>
                 </div>
             </div>
         </div>
@@ -59,10 +68,8 @@ const internCard = ({ name, id, email, school }) => {
 };
 
 const selectCard = (teamArray) => {
-
     // variable containing returned HTML cards code
     let cards = '';
-
     // sequentially adds cards of the correct role to cards variable
     teamArray.forEach(employee => {
 
@@ -82,7 +89,7 @@ const selectCard = (teamArray) => {
                 break;
         
             default:
-                console.error('Something went wrong creating employee cards');
+                console.error('Unknown employee role');
                 break;
         };
 
@@ -102,60 +109,9 @@ const generateHTML = (teamArray) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
     <title>Team Profile</title>
 </head>
-<style>
-body {
-    background-color:white;
-}
-
-.header {
-    color: white;
-    background-color: #ea2452;
-    box-shadow: 1px 3px 19px 0px rgba(0,0,0,0.26);    
-    margin-bottom: 30px;
-    padding: 20px;
-}
-
-.card {
-    border: 1px solid #48a0bb;
-    border-radius: 5px;
-    box-shadow: 1px 2px 16px 2px rgba(0,0,0,0.46);
-}
-
-.card-divider {
-    background-color: #1059cf;
-    color: white;
-    padding: 5px;
-}
-
-.card-section {
-    padding-block: 30px;
-}
-
-p {
-    margin-block: 2px;
-}
-
-h2 {
-    padding: 0;
-    margin: 0;
-}
-
-h4 {
-    padding-bottom: 5px;
-}
-
-h1, h2, h3, h4, p {
-    font-family: 'Raleway', 'Noto Sans', Arial, sans-serif !important;
-}
-</style>
-
 <body>
    
     <div class="grid-y grid-frame">
@@ -177,7 +133,6 @@ h1, h2, h3, h4, p {
 </body>
 </html>
 `;
-
 };
 
 module.exports = generateHTML;

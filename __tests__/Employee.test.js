@@ -6,7 +6,7 @@ describe('Employee', () => {
 
         it('should return a new "Employee" object when called with the "new" keyword and provided valid arguments', () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
 
             const employee = new Employee(name, id, email);
@@ -16,7 +16,7 @@ describe('Employee', () => {
 
         it('should create an object containing "name", "id", and "email" properties when provided valid arguments', () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
 
             const employee = new Employee(name, id, email);
@@ -28,7 +28,7 @@ describe('Employee', () => {
 
         it('should create an object with values for "name", "id", and "email" mapped to the correct keys if provided valid arguments in the correct order', () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
 
             const employee = new Employee(name, id, email);
@@ -46,7 +46,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'name' is undefined", () => {
             let nameUndefined;
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
             
             const cb = () => new Employee(nameUndefined, id, email);
@@ -57,7 +57,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'name' is not a string", () => {
             const nameNotAString = 10;
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
             
             const cb = () => new Employee(nameNotAString, id, email);
@@ -68,7 +68,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'name' is an empty string", () => {
             const nameEmptyString = '';
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
             
             const cb = () => new Employee(nameEmptyString, id, email);
@@ -90,7 +90,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'id' is not a number", () => {
             const name = 'Dan';
-            const idNotANumber = "20";
+            const idNotANumber = "2";
             const email = 'dan@gmail.com';
             
             const cb = () => new Employee(name, idNotANumber, email);
@@ -101,7 +101,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'id' is a negative number", () => {
             const name = 'Dan';
-            const idNegativeNumber = -20;
+            const idNegativeNumber = -2;
             const email = 'dan@gmail.com';
             
             const cb = () => new Employee(name, idNegativeNumber, email);
@@ -120,7 +120,7 @@ describe('Employee', () => {
 
         it("should throw an error if not provided an email", () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             
             const cb = () => new Employee(name, id);
             const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -130,7 +130,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'email' is not a string", () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const emailNotAString = 10;
                 
             const cb = () => new Employee(name, id, emailNotAString);
@@ -141,7 +141,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'email' is an empty string", () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const emailEmptyString = '';
             
             const cb = () => new Employee(name, id, emailEmptyString);
@@ -156,7 +156,7 @@ describe('Employee', () => {
 
         it("should return the 'Employee' object's 'name' value", () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
             const obj = new Employee(name, id, email);
 
@@ -171,7 +171,7 @@ describe('Employee', () => {
 
         it("should return the 'Employee' object's 'id' value", () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
             const obj = new Employee(name, id, email);
 
@@ -186,7 +186,7 @@ describe('Employee', () => {
 
         it("should return the 'Employee' object's 'email' value", () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
             const obj = new Employee(name, id, email);
 
@@ -201,7 +201,7 @@ describe('Employee', () => {
 
         it("should return the string 'Employee' which describes the 'Employee' class", () => {
             const name = 'Dan';
-            const id = 20;
+            const id = 2;
             const email = 'dan@gmail.com';
             const obj = new Employee(name, id, email);
             const str = 'Employee';

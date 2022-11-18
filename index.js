@@ -1,9 +1,8 @@
-// dependency. index.js works almost exclusively with inquirer logic (and some console logs).
 const inquirer = require('inquirer');
-const Logger = require("./logger");
+const fs = require('fs');
+const Logger = require("./src/logger");
 
 const log = new Logger();
-
 // classes
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -11,27 +10,309 @@ const Intern = require('./lib/Intern');
 
 // helper code
 const generateHTML = require('./src/generateHTML');
-const writeToFile = require('./src/writeToFile');
-const {
-    introQuestion,
-    managerQuestions,
-    engineerQuestions,
-    internQuestions,
-    menuQuestion
-} = require('./src/questions');
+let takenIDs = [];
+
+const introQuestion = [
+    {
+        name: 'name',
+        type: 'input',
+        message: 'Enter a name for your document.',
+        default: "index.html",
+        validate: input => {
+            if (!input) {
+                log.yellow('No Input detected. Please enter a file name.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+]
+
+const managerQuestions = [
+    {
+        name: 'name',
+        type: 'input',
+        message: "What is the team manager's name?",
+        validate: input => {
+            if (!input) {
+                log.yellow('No Input detected. Please enter a name.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+        name: 'id',
+        type: 'input',
+        message: "What is the team manager's ID number?",
+        validate: input => {
+            let dupeID = false;
+            takenIDs.forEach(id => {
+
+                if (input === id) {
+                    dupeID = true;
+                }
+            })
+
+            if (!input) {
+                log.yellow('No Input detected. Please enter a number.');
+                return false;
+            } else if (isNaN(input)) {
+                log.yellow('\tPlease enter a number.');
+                return false;
+            } else if (input < 0) {
+                log.yellow('\tPlease enter a non-negative number.');
+                return false;
+            } else if (dupeID) {
+                log.yellow('\tAnother team member already has that ID. Please enter a different ID.');
+                return false;
+            } else {
+                takenIDs.push(input);
+                return true;
+            }
+        }
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: "What is the team manager's email address?",
+        validate: email => {
+
+            const validEmail = String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+
+            if (!validEmail) {
+                log.yellow('\tPlease enter a valid email address in the proper format.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+        name: 'officeNumber',
+        type: 'input',
+        message: "What is the team manager's office number?",
+        validate: input => {
+            if (!input) {
+                log.yellow('No Input detected. Please enter a number.');
+                return false;
+            } else if (isNaN(input)) {
+                log.yellow('\tPlease enter a number.');
+                return false;
+            } else if (input < 0) {
+                log.yellow('\tPlease enter a non-negative number.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+];
+
+const engineerQuestions = [
+    {
+        name: 'name',
+        type: 'input',
+        message: "What is the engineer's name?",
+        validate: input => {
+            if (!input) {
+                log.yellow('No Input detected. Please enter a name.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+
+    {
+        name: 'id',
+        type: 'input',
+        message: "What is the engineer's ID number?",
+        validate: input => {
+
+            let dupeID = false;
+
+            takenIDs.forEach(id => {
+
+                if (input === id) {
+                    dupeID = true;
+                }
+            })
+            if (!input) {
+                log.yellow('No Input detected. Please enter a number.');
+                return false;
+            } else if (isNaN(input)) {
+                log.yellow('\tPlease enter a number.');
+                return false;
+            } else if (input < 0) {
+                log.yellow('\tPlease enter a non-negative number.');
+                return false;
+            } else if (dupeID) {
+                log.yellow('\tAnother team member already has that ID. Please enter a different ID.');
+                return false;
+            } else {
+                takenIDs.push(input);
+                return true;
+            }
+        }
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: "What is the engineer's email address?",
+        validate: email => {
+
+            const validEmail = String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+
+            if (!validEmail) {
+                log.yellow('\tPlease enter a valid email address in the proper format.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+
+    {
+        name: 'github',
+        type: 'input',
+        message: "What is the engineer's github username?",
+        validate: input => {
+            if (!input) {
+                log.yellow('No Input detected. Please enter a username.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+
+];
+
+const internQuestions = [
+
+    {
+        name: 'name',
+        type: 'input',
+        message: "What is the intern's name?",
+        validate: input => {
+            if (!input) {
+                log.yellow('No Input detected. Please enter a name.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+        name: 'id',
+        type: 'input',
+        message: "What is the intern's ID number?",
+        validate: input => {
+
+            let dupeID = false;
+
+            takenIDs.forEach(id => {
+
+                if (input === id) {
+                    dupeID = true;
+                }
+            })
+
+            if (!input) {
+                log.yellow('No Input detected. Please enter a number.');
+                return false;
+            } else if (isNaN(input)) {
+                log.yellow('\tPlease enter a number.');
+                return false;
+            } else if (input < 0) {
+                log.yellow('\tPlease enter a non-negative number.');
+                return false;
+            } else if (dupeID) {
+                log.yellow('\tAnother team member already has that ID. Please enter a different ID.');
+                return false;
+            } else {
+                takenIDs.push(input);
+                return true;
+            }
+        }
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: "What is the intern's email address?",
+        validate: email => {
+
+            const validEmail = String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+
+            if (!validEmail) {
+                log.yellow('\tPlease enter a valid email address in the proper format.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+        name: 'school',
+        type: 'input',
+        message: "What is the intern's school?",
+        validate: input => {
+            if (!input) {
+                log.yellow('No Input detected. Please enter a school.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+
+];
+
+const menuQuestion = [
+    {
+        name: 'menuOption',
+        type: 'list',
+        message: 'Please select one of the following options:',
+        choices: [
+            'Add an engineer',
+            'Add an intern',
+            'Finish building team',
+        ],
+        default: 'Add an engineer'
+    },
+
+];
 
 // variables to hold created objects and document name
 let teamArray = [];
 let documentName = '';
 
-// first prompt. Asks user for document name, stores it in documentName variable, then calls 
-//managerQuery
+const writeToFile = (documentName, documentBody) => {
+    let fileName = "./dist/" + documentName;
+    fs.writeFile(fileName, documentBody, (err) =>
+        err ? console.error(err) : console.log("HTML document successfully created at " + fileName));
+
+}
+
+
 const intro = () => {
-
-    log.green("-----------------------------");
-    log.green("      Application Start      ");
-    log.green("-----------------------------");
-
+    log.cyan("     Team Profile Generator     ");
     inquirer
         .prompt(introQuestion)
         .then(({ name }) => {
@@ -40,17 +321,11 @@ const intro = () => {
             managerQuery();
 
         });
-
 };
 
-// second prompt. asks user for manager information using array of questions from questions.js
-// Stores response as a Manager object and pushed to teamArray. Then calls menu
+
 const managerQuery = () => {
-
-    log.green("-----------------------------");
-    log.green("     Manager Information      ");
-    log.green("-----------------------------");
-
+    log.cyan("     Manager Information      ");
     inquirer
         .prompt(managerQuestions)
         .then(({ name, id, email, officeNumber }) => {
@@ -66,13 +341,9 @@ const managerQuery = () => {
 
 };
 
-// conditional prompt. Is called if user decides to add engineer during menu option selection.
-// stores response as an Engineer object and pushed to teamArray. then calls menu
-const engineerQuery = () => {
 
-    log.green("-----------------------------");
-    log.green("     Engineer Information      ");
-    log.green("-----------------------------");
+const engineerQuery = () => {
+    log.cyan("     Engineer Information      ");
 
     inquirer
         .prompt(engineerQuestions)
@@ -88,13 +359,8 @@ const engineerQuery = () => {
 
 };
 
-// conditional prompt. Is called if user decides to add intern during menu option selection.
-// stores response as an Intern object and pushed to teamArray. then calls menu
 const internQuery = () => {
-
-    log.green("-----------------------------");
-    log.green("      Intern Information      ");
-    log.green("-----------------------------");
+    log.cyan("      Intern Information      ");
 
     inquirer
         .prompt(internQuestions)
@@ -110,17 +376,9 @@ const internQuery = () => {
 
 };
 
-// third prompt. Gives the user a choice between adding an engineer (calls engineerQuery), adding
-// an intern (calls internQuery) or finish building team. If finished, calls generateHTML
-// imported from generateHTML.js and stores the returned HTML code in the documentBody
-// variable. Then calls writeToFile imported from writeToFile.js which handles writing the
-// HTML document given the documentName input from user, and the generated HTML code from
-// generateHTML, using fs library
-const menu = () => {
 
-    log.green("-----------------------------");
-    log.green("       Application Menu      ");
-    log.green("-----------------------------");
+const menu = () => {
+    log.cyan("      Team Profile Generator      ");
 
     inquirer
         .prompt(menuQuestion)
@@ -151,14 +409,14 @@ const menu = () => {
 
 };
 
-// init function called when app starts. basically logs an introduction message, then calls intro
-// which starts user prompts
+
 const init = () => {
 
-    log.green("Hello. Welcome to this team profile generator application. You will be presented with a series of questions about your team members' information. Once you've finished adding the information of all team members, a styled HTML document will be generated in the 'dist' folder. Note that the styles are based on Foundation's CSS framework and some custom CSS styles found in the style.css document also in the 'dist' folder.\x1b[0m");
+    log.cyan("Welcome to the team profile generator application. You will be presented with a series of questions about your team members' information. Once completed an HTML document will be generated in the 'dist' directory. Style provided using Foundation's CSS, additional style.css document also in the 'dist' directory.");
+
     intro();
 
 };
 
-// init function called when app starts using 'node index.js'
+
 init();
