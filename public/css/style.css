@@ -2,6 +2,10 @@ body {
     background-color:white;
 }
 
+h1, h2, h3, h4, p {
+    font-family: Arial, sans-serif !important;
+}
+
 .header {
     color: white;
     background-color: #ea2452;
@@ -35,10 +39,6 @@ h2 {
     margin: 0;
 }
 
-h4 {
+h3 {
     padding-bottom: 5px;
-}
-
-h1, h2, h3, h4, p {
-    font-family: 'Raleway', 'Noto Sans', Arial, sans-serif !important;
 }

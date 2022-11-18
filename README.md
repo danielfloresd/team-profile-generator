@@ -4,13 +4,11 @@
 ## Description   
 <p>This application will automatically generate a styled HTML file displaying all members of a development team. The application supports roles for Manager, Engineer, and Intern. Each employee will be displayed with his/her name, ID, and email. For Managers an office number should be provided, additionally, for Engineers, a GitHub id should be provided, and for Interns, a school name must be provided.
 
-<details>
-<summary>Watch Video</summary>
+
 <video controls autoplay>
-  <source src="./assets/images/video.mp4" type="video/mp4" width="640" height="480">
+  <source src="./public/images/video.webm" type="video/webm" width="640" height="480">
 </video> 
-</details>
-<a href="./assets/images/video.mp4">Download Video</a>
+<a href="./public/images/video.webm">Download Video</a>
 
 ## Table of contents
 
@@ -28,11 +26,14 @@
 ## 🛠️Installation    
 <p>To install the application clone the repository https://github.com/danielfloresd/team-profile-generator and run node package manager with the following command: <strong>npm i</strong>    
 </p>      
+<img src="./public/images/install.PNG" width="800"><img>
+
 
 ## 💻Usage    
 <p>After installing all dependencies run <strong>node index.js or npm start</strong>. The application can also be using aby opening index.html with your favorite web browser
 </p>
-<img src="./assets/images/screenshot.PNG"><img>  
+<img src="./public/images/usage.PNG" width="800"><img>  
+<img src="./public/images/screenshot.PNG" width="800"><img>  
 
 ## 🧩Dependencies   
 * [Inquirer.js](https://www.npmjs.com/package/inquirer)
@@ -65,12 +66,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </details></br>   
        
-## 🤝Contributing    
+## 🤝Contributing 
+
 If you would like to contribute, please follow the [GitHub contribution guidelines](https://github.com/github/docs/blob/main/CONTRIBUTING.md)   
       
-## 📃Tests    
+## 📃Tests  
 Testing implemented using jest. To run unit testing <strong>npm test</strong>
-      
+
+<img src="./public/images/test.PNG" width="800"><img>
+
 ## ❓Questions   
 <p> Question 1: Does the application support additional styling? Yes, the style can be customized in the style.css file.
 </p>
