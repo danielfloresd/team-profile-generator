@@ -59,7 +59,7 @@ const internCard = ({ name, id, email, school }) => {
                 <div class="card-section text-left">
                     <p>ID: <b>${id}</b></p>
                     <p>email: <a href="mailto: ${email}"><b>${email}</b></a></p>
-                    <p>School: <a href="https://${school}.edu"><b>${school}</b></a></p>
+                    <p>School: <a href="https://${school}.edu" target="_blank"><b>${school}</b></a></p>
                 </div>
             </div>
         </div>
