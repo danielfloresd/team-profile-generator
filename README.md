@@ -4,10 +4,12 @@
 ## Description   
 <p>This application will automatically generate a styled HTML file displaying all members of a development team. The application supports roles for Manager, Engineer, and Intern. Each employee will be displayed with his/her name, ID, and email. For Managers an office number should be provided, additionally, for Engineers, a GitHub id should be provided, and for Interns, a school name must be provided.
 
+<p><strong>🎥Click on video to view🎥</strong></p>
 
-<video controls autoplay>
-  <source src="./public/images/video.mp4" type="video/mp4" width="640" height="480">
-</video> 
+<a href="https://drive.google.com/file/d/1cun2_ld7s2nrLNi0s7Fub0auj5-9MK5g/" target="_blank">
+<img src="./public/images/video.PNG" width="640" height="480"></img>
+</a>
+
 Download Video in <a href="./public/images/video.webm">webm</a> or <a href="./public/images/video.mp4">mp4</a>
 
 ## Table of contents
