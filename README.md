@@ -6,9 +6,9 @@
 
 
 <video controls autoplay>
-  <source src="./public/images/video.webm" type="video/webm" width="640" height="480">
+  <source src="./public/images/video.mp4" type="video/mp4" width="640" height="480">
 </video> 
-<a href="./public/images/video.webm">Download Video</a>
+Download Video in <a href="./public/images/video.webm">webm</a> or <a href="./public/images/video.mp4">mp4</a>
 
 ## Table of contents
 
