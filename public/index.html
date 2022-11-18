@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link semantic-ui 2.5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+    <title>Tean Profile Generator</title>
+</head>
+
+<body>
+    <header>
+        <div class="ui inverted vertical masthead center aligned segment" id="hero">
+            <div class="ui text container">
+                <a href="./index.html">
+                    <i class="group huge icon" style="color: #57a4d7;"></i>
+                    <h1 class="ui inverted header">
+                        Team Profile Generator
+                    </h1>
+                </a>
+                <h2>Generate your Team Profile</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Add form to generate README.md file -->
+        <br>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui four column cards">
+                    <div class="ui centered card">
+                        <div class="content header">
+                            <h2 class="right floated">Manager</h2>
+                            <i class="user plus huge icon"></i>
+                        </div>
+                        <div class="content">
+                            <div class="field">
+                                <label for="manager">
+                                    <i class="user icon"></i>
+                                </label>
+                                <input type="text" name="manager" id="manager" placeholder="Manager Name" required>
+                                <label for="manager-id">
+                                    <i class="id badge icon"></i>
+                                </label>
+                                <input type="number" name="manager-id" id="manager-id" placeholder="Manager ID"
+                                    required>
+                                <label for="manager-email">
+                                    <i class="envelope icon"></i>
+                                </label>
+                                <input type="text" name="manager-email" id="manager-email" placeholder="Manager email"
+                                    required>
+                                <label for="manager-office">
+                                    <i class="phone icon"></i>
+                                </label>
+                                <input type="number" name="manager-office" id="manager-office"
+                                    placeholder="Manager office number" required>
+                            </div>
+                        </div>
+                        <button id="manager-add" class="ui bottom attached button">
+                            <i class="plus icon"></i>
+                            Add Manager
+                        </button>
+                    </div>
+                    <div class="ui centered card">
+                        <div class="content header">
+                            <h2 class="right floated">Engineer</h2>
+                            <i class="laptop huge icon"></i>
+                        </div>
+                        <div class="content">
+                            <div class="field">
+                                <label for="engineer">
+                                    <i class="user icon"></i>
+                                </label>
+                                <input type="text" name="engineer" id="engineer" placeholder="Engineer Name" required>
+                                <label for="engineer-id">
+                                    <i class="id badge icon"></i>
+                                </label>
+                                <input type="number" name="engineer-id" id="engineer-id" placeholder="Engineer ID"
+                                    required>
+                                <label for="engineer-email">
+                                    <i class="envelope icon"></i>
+                                </label>
+                                <input type="text" name="engineer-email" id="engineer-email"
+                                    placeholder="Engineer email" required>
+                                <label for="engineer-github">
+                                    <i class="github icon"></i>
+                                </label>
+                                <input type="text" name="engineer-github" id="engineer-github" placeholder="Github"
+                                    required>
+                            </div>
+                        </div>
+                        <button id="engineer-add" class="ui bottom attached button">
+                            <i class="plus icon"></i>
+                            Add Engineer
+                        </button>
+                    </div>
+                    <div class="ui centered card">
+                        <div class="content header">
+                            <h2 class="right floated">Intern</h2>
+                            <i class="graduation cap huge icon"></i>
+                        </div>
+                        <div class="content">
+                            <div class="field">
+                                <label for="intern">
+                                    <i class="user icon"></i>
+                                </label>
+                                <input type="text" name="intern" id="intern" placeholder="intern Name" required>
+                                <label for="intern-id">
+                                    <i class="id badge icon"></i>
+                                </label>
+                                <input type="number" name="intern-id" id="intern-id" placeholder="Intern ID" required>
+                                <label for="intern-email">
+                                    <i class="envelope icon"></i>
+                                </label>
+                                <input type="text" name="intern-email" id="intern-email" placeholder="Intern email"
+                                    required>
+                                <label for="intern-school">
+                                    <i class="university icon"></i>
+                                </label>
+                                <input type="text" name="intern-school" id="intern-school" placeholder="School"
+                                    required>
+                            </div>
+                        </div>
+                        <button id="intern-add" class="ui bottom attached button">
+                            <i class="plus icon"></i>
+                            Add Intern
+                        </button>
+                    </div>
+                    <div class="ui centered card">
+                        <div class="content header">
+                            <h2 class="right floated">Team</h2>
+                            <i class="users huge icon"></i>
+                        </div>
+                        <div class="content">
+                            <div id="team-list" class="ui list">
+                            </div>
+                        </div>
+                        <!-- Add 2 button container -->
+                        <div class="ui two bottom attached buttons">
+                            <button id="generate" class="ui button">
+                                <i class="file icon"></i>
+                                Preview
+                            </button>
+                            <button id="download" class="ui button">
+                                <i class="file alternate outline icon"></i>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<!-- Add jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Add semantic-ui.js from cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+    integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Add readme.js-->
+<!-- <script src="./utils/generateMarkdown.js"></script> -->
+<!-- Add script.js -->
+<script src="./src/generateHTML.js"></script>
+<script type="module" src="script.js"></script>
+
+</html>

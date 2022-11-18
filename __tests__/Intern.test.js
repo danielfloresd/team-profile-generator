@@ -5,10 +5,10 @@ describe('Intern', () => {
     describe("Initialization", () => {
 
         it('should return a new "Intern" object when called with the "new" keyword and provided valid arguments', () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
 
             const intern = new Intern(name, id, email, school);
 
@@ -16,10 +16,10 @@ describe('Intern', () => {
         });
 
         it('should create an object containing "name", "id", "email", and "school" properties when provided valid arguments', () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
 
             const intern = new Intern(name, id, email, school);
 
@@ -30,10 +30,10 @@ describe('Intern', () => {
         });
 
         it('should create an object with values for "name", "id", "email", and "school" mapped to the correct keys if provided valid arguments in the correct order', () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
 
             const intern = new Intern(name, id, email, school);
 
@@ -51,9 +51,9 @@ describe('Intern', () => {
 
         it("should throw an error if 'name' is undefined", () => {
             let nameUndefined;
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             
             const cb = () => new Intern(nameUndefined, id, email, school);
             const err = new Error("Expected parameter 'name' to be a non-empty string");
@@ -63,9 +63,9 @@ describe('Intern', () => {
 
         it("should throw an error if 'name' is not a string", () => {
             const nameNotAString = 10;
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
 
             const cb = () => new Intern(nameNotAString, id, email, school);
             const err = new Error("Expected parameter 'name' to be a non-empty string");
@@ -75,9 +75,9 @@ describe('Intern', () => {
 
         it("should throw an error if 'name' is an empty string", () => {
             const nameEmptyString = '';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             
             const cb = () => new Intern(nameEmptyString, id, email, school);
             const err = new Error("Expected parameter 'name' to be a non-empty string");
@@ -86,7 +86,7 @@ describe('Intern', () => {
         });
 
         it("should throw an error if not provided an id, email, or school", () => {
-            const name = 'Bob';
+            const name = 'Daniel';
             
             const cb = () => new Intern(name);
       
@@ -94,10 +94,10 @@ describe('Intern', () => {
         });
 
         it("should throw an error if 'id' is undefined", () => {
-            const name = 'Bob';
+            const name = 'Daniel';
             let idUndefined;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             
             const cb = () => new Intern(name, idUndefined, email, school);
             const err = new Error("Expected parameter 'id' to be a non-negative number");
@@ -106,10 +106,10 @@ describe('Intern', () => {
         });
 
         it("should throw an error if 'id' is not a number", () => {
-            const name = 'Bob';
+            const name = 'Daniel';
             const idNotANumber = "20";
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             
             const cb = () => new Intern(name, idNotANumber, email, school);
             const err = new Error("Expected parameter 'id' to be a non-negative number");
@@ -118,10 +118,10 @@ describe('Intern', () => {
         });
 
         it("should throw an error if 'id' is a negative number", () => {
-            const name = 'Bob';
+            const name = 'Daniel';
             const idNegativeNumber = -20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             
             const cb = () => new Intern(name, idNegativeNumber, email, school);
             const err = new Error("Expected parameter 'id' to be a non-negative number");
@@ -130,8 +130,8 @@ describe('Intern', () => {
         });
 
         it("should throw an error if not provided an email or school", () => {
-            const name = 'Bob';
-            const id = 20;
+            const name = 'Daniel';
+            const id = 1;
             
             const cb = () => new Intern(name, id);
       
@@ -139,10 +139,10 @@ describe('Intern', () => {
         });
 
         it("should throw an error if 'email' is not a string", () => {
-            const name = 'Bob';
-            const id = 20;
+            const name = 'Daniel';
+            const id = 1;
             const emailNotAString = 10;
-            const school = 'MIT';
+            const school = 'University of Arizona';
                 
             const cb = () => new Intern(name, id, emailNotAString, school);
             const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -151,10 +151,10 @@ describe('Intern', () => {
         });
 
         it("should throw an error if 'email' is an empty string", () => {
-            const name = 'Bob';
-            const id = 20;
+            const name = 'Daniel';
+            const id = 1;
             const emailEmptyString = '';
-            const school = 'MIT';
+            const school = 'University of Arizona';
             
             const cb = () => new Intern(name, id, emailEmptyString, school);
             const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -163,10 +163,10 @@ describe('Intern', () => {
         });
 
         it("should throw an error if 'email' is undefined", () => {
-            const name = 'Bob';
-            const id = 20;
+            const name = 'Daniel';
+            const id = 1;
             let emailUndefined;
-            const school = 'MIT';
+            const school = 'University of Arizona';
             
             const cb = () => new Intern(name, id, emailUndefined, school);
             const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -175,9 +175,9 @@ describe('Intern', () => {
         });
 
         it("should throw an error if not provided a school", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
             
             const cb = () => new Intern(name, id, email);
             const err = new Error("Expected parameter 'school' to be a non-empty string");
@@ -186,9 +186,9 @@ describe('Intern', () => {
         });
 
         it("should throw an error if 'school' is not a string", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
             const schoolNotAString = 10;
 
             const cb = () => new Intern(name, id, email, schoolNotAString);
@@ -198,9 +198,9 @@ describe('Intern', () => {
         });
 
         it("should throw an error if 'school' is an empty string", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
             const schoolEmptyString = '';
             
             const cb = () => new Intern(name, id, email, schoolEmptyString);
@@ -214,10 +214,10 @@ describe('Intern', () => {
     describe("getName", () => {
 
         it("should return the 'Intern' object's 'name' value", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             const obj = new Intern(name, id, email, school);
 
             const result = obj.getName();
@@ -230,10 +230,10 @@ describe('Intern', () => {
     describe("getId", () => {
 
         it("should return the 'Intern' object's 'id' value", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             const obj = new Intern(name, id, email, school);
 
             const result = obj.getId();
@@ -246,10 +246,10 @@ describe('Intern', () => {
     describe("getEmail", () => {
 
         it("should return the 'Intern' object's 'email' value", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             const obj = new Intern(name, id, email, school);
 
             const result = obj.getEmail();
@@ -262,10 +262,10 @@ describe('Intern', () => {
     describe("getSchool", () => {
 
         it("should return the 'Intern' object's 'school' value", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             const obj = new Intern(name, id, email, school);
 
             const result = obj.getSchool();
@@ -278,10 +278,10 @@ describe('Intern', () => {
     describe("getRole", () => {
 
         it("should return the string 'Intern' which describes the 'Intern' class", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             const obj = new Intern(name, id, email, school);
             const str = 'Intern';
 
@@ -291,10 +291,10 @@ describe('Intern', () => {
         });
 
         it("should not return the string 'Employee' since the getRole method extended from the Employee class has been overridden to return the string 'Intern'", () => {
-            const name = 'Bob';
-            const id = 20;
-            const email = 'bob@email.com';
-            const school = 'MIT';
+            const name = 'Daniel';
+            const id = 1;
+            const email = 'daniel@gmail.com';
+            const school = 'University of Arizona';
             const obj = new Intern(name, id, email, school);
             const str = 'Employee';
 

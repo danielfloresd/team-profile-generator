@@ -8,7 +8,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
 
             const manager = new Manager(name, id, email, officeNumber);
 
@@ -19,7 +19,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
 
             const manager = new Manager(name, id, email, officeNumber);
 
@@ -33,7 +33,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
 
             const manager = new Manager(name, id, email, officeNumber);
 
@@ -53,7 +53,7 @@ describe('Manager', () => {
             let nameUndefined;
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             
             const cb = () => new Manager(nameUndefined, id, email, officeNumber);
             const err = new Error("Expected parameter 'name' to be a non-empty string");
@@ -65,7 +65,7 @@ describe('Manager', () => {
             const nameNotAString = 10;
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             
             const cb = () => new Manager(nameNotAString, id, email, officeNumber);
             const err = new Error("Expected parameter 'name' to be a non-empty string");
@@ -77,7 +77,7 @@ describe('Manager', () => {
             const nameEmptyString = '';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             
             const cb = () => new Manager(nameEmptyString, id, email, officeNumber);
             const err = new Error("Expected parameter 'name' to be a non-empty string");
@@ -97,7 +97,7 @@ describe('Manager', () => {
             const name = 'Bob';
             let idUndefined;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             
             const cb = () => new Manager(name, idUndefined, email, officeNumber);
             const err = new Error("Expected parameter 'id' to be a non-negative number");
@@ -109,7 +109,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const idNotANumber = "20";
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             
             const cb = () => new Manager(name, idNotANumber, email, officeNumber);
             const err = new Error("Expected parameter 'id' to be a non-negative number");
@@ -121,7 +121,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const idNegativeNumber = -20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             
             const cb = () => new Manager(name, idNegativeNumber, email, officeNumber);
             const err = new Error("Expected parameter 'id' to be a non-negative number");
@@ -142,7 +142,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const emailNotAString = 10;
-            const officeNumber = 123;
+            const officeNumber = 1001;
                 
             const cb = () => new Manager(name, id, emailNotAString, officeNumber);
             const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -154,7 +154,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const emailEmptyString = '';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             
             const cb = () => new Manager(name, id, emailEmptyString, officeNumber);
             const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -166,7 +166,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             let emailUndefined;
-            const officeNumber = 123;
+            const officeNumber = 1001;
             
             const cb = () => new Manager(name, id, emailUndefined, officeNumber);
             const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -189,7 +189,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumberNotANumber = '123';
+            const officeNumberNotANumber = '1001';
 
             const cb = () => new Manager(name, id, email, officeNumberNotANumber);
             const err = new Error("Expected parameter 'officeNumber' to be a non-negative number");
@@ -201,7 +201,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumberNegativeANumber = -123;
+            const officeNumberNegativeANumber = -1001;
             
             const cb = () => new Manager(name, id, email, officeNumberNegativeANumber);
             const err = new Error("Expected parameter 'officeNumber' to be a non-negative number");
@@ -217,7 +217,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             const obj = new Manager(name, id, email, officeNumber);
 
             const result = obj.getName();
@@ -233,7 +233,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             const obj = new Manager(name, id, email, officeNumber);
 
             const result = obj.getId();
@@ -249,7 +249,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             const obj = new Manager(name, id, email, officeNumber);
 
             const result = obj.getEmail();
@@ -265,7 +265,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             const obj = new Manager(name, id, email, officeNumber);
 
             const result = obj.getOfficeNumber();
@@ -281,7 +281,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             const obj = new Manager(name, id, email, officeNumber);
             const str = 'Manager';
 
@@ -294,7 +294,7 @@ describe('Manager', () => {
             const name = 'Bob';
             const id = 20;
             const email = 'bob@email.com';
-            const officeNumber = 123;
+            const officeNumber = 1001;
             const obj = new Manager(name, id, email, officeNumber);
             const str = 'Employee';
 

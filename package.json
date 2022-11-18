@@ -21,9 +21,9 @@
   "author": "Daniel Flores",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danielfloresd/dev-team-profile-generator/issues"
+    "url": "https://github.com/danielfloresd/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/danielfloresd/dev-team-profile-generator#readme",
+  "homepage": "https://github.com/danielfloresd/team-profile-generator#readme",
   "devDependencies": {
     "jest": "^28.1.1"
   },

@@ -1,10 +1,10 @@
-# Dev Team Profile Generator
+# Team Profile Generator
 
 [![GitHub github:](https://img.shields.io/badge/license-MIT-blue.svg)](https://choosealicense.com/licenses/mit)
 ## Description   
-<p>This application will that automatically generate a professional README.md markdown file for a project, based on information provided by the user. The application presents a series of prompts to the user to fill in sections in the README. The application supports input both from the command line with node.js or via a web interface
+<p>This application will automatically generate a styled HTML file displaying all members of a development team. The application supports roles for Manager, Engineer, and Intern. Each employee will be displayed with his/her name, ID, and email. For Managers an office number should be provided, additionally, for Engineers, a GitHub id should be provided, and for Interns, a school name must be provided.
 
-<b>User Story</b>
+<!-- <b>User Story</b>
 AS A manager
 I WANT to generate a webpage that displays my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles
@@ -28,15 +28,15 @@ THEN I am prompted to enter the intern’s name, ID, email, and school, and I am
 WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
 
-</p>   
+</p>    -->
 
 <details>
 <summary>Watch Video</summary>
 <video controls autoplay>
-  <source src="./assets/images/Professional Readme Generator 640x480.mp4" type="video/mp4" width="640" height="480">
+  <source src="./assets/images/video.mp4" type="video/mp4" width="640" height="480">
 </video> 
 </details>
-<a href="./assets/images/Professional Readme Generator.mp4">Download Video</a>
+<a href="./assets/images/video.mp4">Download Video</a>
 
 ## Table of contents
 
@@ -52,17 +52,18 @@ THEN I exit the application, and the HTML is generated
   * [Programming Languages](#👨‍💻programming-languages)
 
 ## 🛠️Installation    
-<p>To install the application clone the repository https://github.com/danielfloresd/professional-readme-generator and run node package manager with the following command: node i    
+<p>To install the application clone the repository https://github.com/danielfloresd/team-profile-generator and run node package manager with the following command: <strong>$node i</strong>    
 </p>      
 
 ## 💻Usage    
-<p>After installing all dependencies run $node.js index.js. The application can also be using aby opening index.html with your favorite web browser
+<p>After installing all dependencies run <strong>$node.js index.js</strong>. The application can also be using aby opening index.html with your favorite web browser
 </p>
-<img src="./assets/images/nodejs.PNG"><img>  
+<img src="./assets/images/screenshot.PNG"><img>  
 
 ## 🧩Dependencies   
 * [Inquirer.js](https://www.npmjs.com/package/inquirer)
-* [Foundation.js](https://www.npmjs.com/package/foundation)
+* [Jest](https://www.npmjs.com/package/jest)
+* [Foundation](https://get.foundation/)
 
 ## 📛License    
 Project license: [MIT](https://choosealicense.com/licenses/mit).     
@@ -94,18 +95,17 @@ SOFTWARE.
 If you would like to contribute, please follow the [GitHub contribution guidelines](https://github.com/github/docs/blob/main/CONTRIBUTING.md)   
       
 ## 📃Tests    
-For testing, you can use the GitHub node.js CI workflow.Please visit: ["The guide to building and testing with node.js"](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs)   
+Testing implemented using jest. To run unit testing <strong>npm test</strong>
       
 ## ❓Questions   
-<p> Question 1: Does the application support images? Currently, there is no support for embedding images to the readme file    
-You can contact me with the information below:
+<p> Question 1: Does the application support additional styling? Yes, the style can be customized in the style.css file.
 </p>
 
 * [![GitHub github:](https://img.shields.io/badge/github:-danielfloresd-black.svg)](https://github.com/danielfloresd)   
 * [![email](https://img.shields.io/badge/email:-daniel.flor3s.d@gmail.com-blue.svg)](mailto:daniel.flor3s.d@gmail.com)    
         
 ## 🌐Website    
-To use the web app, please visit the [Professional README.md Generator](https://danielfloresd.github.io/professional-readme-generator/)  
+To use the web app, please visit the [Professional README.md Generator](https://danielfloresd.github.io/team-profile-generator/)  
 
 ## 👨‍💻Programming Languages    
 This project was created with: HTML, CSS, and JavaScript   
