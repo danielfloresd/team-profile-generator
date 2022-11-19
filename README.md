@@ -6,7 +6,7 @@
 
 <p><strong>🎥Click on video to view🎥</strong></p>
 
-<a href="https://drive.google.com/file/d/1Dx1n522NCijR10VcNuXPnsnyS8OdLvsC/view?usp=share_link" target="_blank">
+<a href="https://drive.google.com/file/d/1qTWG7uddcVcrCi7xVT3yNl4vStEt5ZMf/view?usp=share_link" target="_blank">
 <img src="./public/images/video.PNG" width="640" height="480"></img>
 </a>
 
