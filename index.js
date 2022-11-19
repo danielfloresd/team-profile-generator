@@ -325,7 +325,7 @@ const intro = () => {
 
 
 const managerQuery = () => {
-    log.cyan("     Manager Information      ");
+    log.red("     Manager Information      ");
     inquirer
         .prompt(managerQuestions)
         .then(({ name, id, email, officeNumber }) => {
@@ -343,7 +343,7 @@ const managerQuery = () => {
 
 
 const engineerQuery = () => {
-    log.cyan("     Engineer Information      ");
+    log.blue("     Engineer Information      ");
 
     inquirer
         .prompt(engineerQuestions)
@@ -360,7 +360,7 @@ const engineerQuery = () => {
 };
 
 const internQuery = () => {
-    log.cyan("      Intern Information      ");
+    log.magenta("      Intern Information      ");
 
     inquirer
         .prompt(internQuestions)

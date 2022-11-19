@@ -24,6 +24,7 @@ Download Video in <a href="./public/images/video.webm">webm</a> or <a href="./pu
   * [Questions](#❓questions)
   * [Website](#🌐website)
   * [Programming Languages](#👨‍💻programming-languages)
+  * [Credits](#👨creadits)
 
 ## 🛠️Installation    
 <p>To install the application clone the repository https://github.com/danielfloresd/team-profile-generator and run node package manager with the following command: <strong>npm i</strong>    
@@ -89,6 +90,9 @@ To use the web app, please visit the [Team Profile Generator](https://danielflor
 
 ## 👨‍💻Programming Languages    
 This project was created with: HTML, CSS, and JavaScript   
+
+## 👨Credits
+ logger.js used to print colorful messages to console log was borrowed from the University of Arizona bootcamp course material
 
 <!-- <b>User Story</b>
 AS A manager
