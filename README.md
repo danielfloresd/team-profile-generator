@@ -36,6 +36,7 @@ Download Video in <a href="./public/images/video.webm">webm</a> or <a href="./pu
 <p>After installing all dependencies run <strong>node index.js or npm start</strong>. The application can also be using aby opening index.html with your favorite web browser
 </p>
 <img src="./public/images/usage.PNG" width="800"><img>  
+
 <img src="./public/images/screenshot.PNG" width="800"><img>  
 
 ## 🧩Dependencies   
