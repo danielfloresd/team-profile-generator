@@ -33,7 +33,8 @@ Download Video in <a href="./public/images/video.webm">webm</a> or <a href="./pu
 
 
 ## 💻Usage    
-<p>After installing all dependencies run <strong>node index.js or npm start</strong>. The application can also be using aby opening index.html with your favorite web browser
+<p>
+After installing all dependencies run <strong>node index.js or npm start</strong>.
 </p>
 <img src="./public/images/usage.PNG" width="800"><img>  
 
@@ -82,6 +83,7 @@ Testing implemented using jest. To run unit testing <strong>npm test</strong>
 ## ❓Questions   
 <p> Question 1: Does the application support additional styling? Yes, the style can be customized in the style.css file.
 </p>
+For additional questions, please contact:
 
 * [![GitHub github:](https://img.shields.io/badge/github:-danielfloresd-black.svg)](https://github.com/danielfloresd)   
 * [![email](https://img.shields.io/badge/email:-daniel.flor3s.d@gmail.com-blue.svg)](mailto:daniel.flor3s.d@gmail.com)    
